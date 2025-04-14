@@ -1,9 +1,14 @@
 package com.example;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import io.javalin.Javalin;
 import io.javalin.http.HttpStatus;
 
 public class App {
+    private static final Logger logger = LoggerFactory.getLogger(App.class);
+    
     public static void main(String[] args) {
         Javalin app = Javalin.create().start(7000);
 
@@ -86,5 +91,7 @@ public class App {
 
         // TODO: figure this out later.
         app.exception(Exception.class, null);
+
+        logger.info("Example log from {}", App.class.getSimpleName());
     }
 }
