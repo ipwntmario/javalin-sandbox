@@ -10,6 +10,8 @@
     <junit.version>5.6.0</junit.version>
     <mysql-connector-java.version>8.0.33</mysql-connector-java.version>
     <javalin.version>6.6.0</javalin.version>
+    <slf4j-simple.version>2.0.17</slf4j-simple.version>
+    <jackson-databind.version>2.19.0-rc2</jackson-databind.version>
     <maven-enforcer-plugin.version>3.0.0-M3</maven-enforcer-plugin.version>
     <maven-checkstyle-plugin.version>3.1.2</maven-checkstyle-plugin.version>
     <checkstyle.version>8.45.1</checkstyle.version>
@@ -53,13 +55,13 @@
     <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-simple</artifactId>
-      <version>2.0.17</version>
+      <version>${slf4j-simple.version}</version>
     </dependency>
 
     <dependency>
         <groupId>com.fasterxml.jackson.core</groupId>
         <artifactId>jackson-databind</artifactId>
-        <version>2.19.0-rc2</version>
+        <version>${jackson-databind.version}</version>
         <type>jar</type>
     </dependency>
     

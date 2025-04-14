@@ -3,7 +3,7 @@ package com.example;
 import io.javalin.Javalin;
 import io.javalin.http.HttpStatus;
 
-public class HelloWorld {
+public class App {
     public static void main(String[] args) {
         Javalin app = Javalin.create().start(7000);
 
@@ -13,12 +13,36 @@ public class HelloWorld {
         });
 
         // http://localhost:7000/ GET
-        app.get("/", ctx -> {
+        app.get("/helloworld", ctx -> {
             System.out.println("Hello, server!");
             ctx.result(
                 "Hello, user!\n" + 
                 "Status code: " + ctx.status().toString()
             );
+        });
+
+        /*
+         * Fetch all users.
+         */
+        // http://localhost:7000/users GET
+        app.get("/users", UserController.fetchAllUsernames);
+
+        /*
+         * Fetch a single user by id.
+         */
+        // http://localhost:7000/users/{id} GET
+        app.get("/users/{id}", UserController.fetchById);
+
+        /*
+         * Create a new user.
+         */
+        // http://localhost:7000/ POST
+        app.post("/",  ctx -> {
+            User user = ctx.bodyAsClass(User.class);
+            UserDao dao = UserDao.instance();
+            dao.addUser(user);
+            ctx.status(201); // Created
+            ctx.json(user);
         });
 
         // http://localhost:7000/lost GET
