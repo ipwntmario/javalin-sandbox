@@ -54,7 +54,7 @@ public class App {
         // http://localhost:7000/found GET
         app.get("/found", ctx -> {
             System.out.println("...but now I'm found.");
-            ctx.result("Welcome to place.");
+            ctx.result("Welcome to here. ⫷h⫸⫷e⫸⫷l⫸⫷l⫸⫷o⫸");
         });
 
         // http://localhost:7000/path/* GET
@@ -80,5 +80,11 @@ public class App {
             // run after all requests
             System.out.println("I was right, somebody did somethin'!");
         });
+
+        // TODO: figure this out later.
+        app.error(404, null);
+
+        // TODO: figure this out later.
+        app.exception(Exception.class, null);
     }
 }
