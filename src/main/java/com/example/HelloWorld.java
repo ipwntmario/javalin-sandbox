@@ -15,8 +15,11 @@ public class HelloWorld {
         // http://localhost:7000/dylan POST
         // You can't send the POST verb by visiting the URL with the browser,
         // so you must use something like Thunder Client.
-        app.post("dylan", ctx -> {
+        app.post("/dylan", ctx -> {
             ctx.result("Hello, Dylan!");
+
+            // No idea what this actually does yet:
+            ctx.status(201);
         });
     }
 }
