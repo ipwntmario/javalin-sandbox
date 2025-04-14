@@ -12,6 +12,7 @@
     <javalin.version>6.6.0</javalin.version>
     <slf4j-simple.version>2.0.17</slf4j-simple.version>
     <jackson-databind.version>2.19.0-rc2</jackson-databind.version>
+    <logback-core.version>1.5.18</logback-core.version>
     <maven-enforcer-plugin.version>3.0.0-M3</maven-enforcer-plugin.version>
     <maven-checkstyle-plugin.version>3.1.2</maven-checkstyle-plugin.version>
     <checkstyle.version>8.45.1</checkstyle.version>
@@ -26,6 +27,8 @@
   </properties>
   <dependencies>
 
+    <!-- JUnit Jupiter API -->
+    <!-- Allows for unit tests -->
     <dependency>
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter-api</artifactId>
@@ -33,6 +36,8 @@
       <scope>test</scope>
     </dependency>
 
+    <!-- JUnit Jupiter Engine -->
+    <!-- Allows for unit tests -->
     <dependency>
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter-engine</artifactId>
@@ -40,29 +45,45 @@
       <scope>test</scope>
     </dependency>
 
+    <!-- MySQL Connector Java -->
+    <!-- Executes commands to and recieves responses from a MySQL server -->
     <dependency>
       <groupId>mysql</groupId>
       <artifactId>mysql-connector-java</artifactId>
       <version>${mysql-connector-java.version}</version>
     </dependency>
 
+    <!-- Javalin -->
+    <!-- A web framework -->
     <dependency>
-        <groupId>io.javalin</groupId>
-        <artifactId>javalin</artifactId>
-        <version>${javalin.version}</version>
+      <groupId>io.javalin</groupId>
+      <artifactId>javalin</artifactId>
+      <version>${javalin.version}</version>
     </dependency>
 
+    <!-- Simple Logging Facade for Java -->
+    <!-- Used by Jackson and Logback -->
     <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-simple</artifactId>
       <version>${slf4j-simple.version}</version>
     </dependency>
 
+    <!-- Jackson Databind -->
+    <!-- Allows for JSON parsing -->
     <dependency>
-        <groupId>com.fasterxml.jackson.core</groupId>
-        <artifactId>jackson-databind</artifactId>
-        <version>${jackson-databind.version}</version>
-        <type>jar</type>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-databind</artifactId>
+      <version>${jackson-databind.version}</version>
+      <type>jar</type>
+    </dependency>
+
+    <!-- Logback Core -->
+    <!-- A logging framework -->
+    <dependency>
+      <groupId>ch.qos.logback</groupId>
+      <artifactId>logback-core</artifactId>
+      <version>${logback-core.version}</version>
     </dependency>
     
   </dependencies>
